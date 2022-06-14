@@ -3,14 +3,14 @@ const Web3 = require('web3');
 const { interface, bytecode } = require('./compile');
 
 const provider = new HDWalletProvider(
-  /* Put here your wallet mnemonic */
-  'YOUR_MNEMONIC',
-  /* Put here your project endpoint link */
-  /* 
+    /* Put here your wallet mnemonic */
+    'YOUR_MNEMONIC',
+    /* Put here your project endpoint link */
+    /* 
       To get that link you should go to infura.io. Sign in and create new project.
       Change endpoints to Rinkeby and copy https link 
-  */
-  'YOUR_INFURA_URL'
+    */
+    'YOUR_INFURA_URL'
 );
 const web3 = new Web3(provider);
 

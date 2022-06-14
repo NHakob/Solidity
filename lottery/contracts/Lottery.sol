@@ -1,10 +1,10 @@
 pragma solidity ^0.4.17;
 
-contract lottery {
+contract Lottery {
     address private manager;
     address[] private players;
-
-    function lottery() public {
+    
+    function Lottery() public {
         manager = msg.sender;
     }
 
@@ -17,8 +17,7 @@ contract lottery {
     }
 
     function enter() public payable {
-        require(msg.value != manager);
-        require(msg.value == 1000 wei);
+        require(msg.value == 1000 wei && msg.sender != manager);
 
         players.push(msg.sender);
     }
@@ -41,6 +40,4 @@ contract lottery {
         require(msg.sender == manager);
         _;
     }
-
-
 }
